@@ -28,7 +28,7 @@ public class OrderServer extends BaseServer {
     @RequestMapping(value = "/list",method = {RequestMethod.POST})
     public JsonResponse list(@ModelAttribute User user){
         JsonResponse json = new JsonResponse(false);
-        if (validateUser(user.getPhoneName(),user.getPassword())){
+        if (validateUser(user.getPhoneNum(),user.getInviteCode())){
             SqlSession session = openSession();
             OrderMapper orderMapper = session.getMapper(OrderMapper.class);
             UserMapper userMapper = session.getMapper(UserMapper.class);
@@ -38,12 +38,12 @@ public class OrderServer extends BaseServer {
 
             //用户id
             userExample.clear();
-            userExample.createCriteria().andPhoneNameEqualTo(user.getPhoneName());
+            userExample.createCriteria().andPhoneNameEqualTo(user.getCustomerId()+"");
             User user1 = userMapper.selectByExample(userExample).get(0);
 
             //该用户所有订单
             orderExample.clear();
-            orderExample.createCriteria().andUserIdEqualTo(user1.getId());
+            orderExample.createCriteria().andUserIdEqualTo(user1.getCustomerId());
             List<Order> orders = orderMapper.selectByExample(orderExample);
             List<OrderList> orderLists = new ArrayList<OrderList>();
             for (Order order : orders){
@@ -66,7 +66,7 @@ public class OrderServer extends BaseServer {
     @RequestMapping(value = "/orderDetail",method = {RequestMethod.POST})
     public JsonResponse orderDetail(@ModelAttribute User user, @RequestParam(value = "orderId") String orderId){
         JsonResponse json = new JsonResponse(false);
-        if (validateUser(user.getPhoneName(),user.getPassword())){
+        if (validateUser(user.getPhoneNum(),user.getInviteCode())){
             SqlSession session = openSession();
             OrderMapper orderMapper = session.getMapper(OrderMapper.class);
             UserMapper userMapper = session.getMapper(UserMapper.class);

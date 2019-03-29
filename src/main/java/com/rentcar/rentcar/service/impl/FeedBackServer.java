@@ -1,3 +1,4 @@
+/*
 package com.rentcar.rentcar.service.impl;
 
 
@@ -18,9 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
 
-/**
+*
  * Created by Xing on 2015/11/29.
- */
+
+
 @RequestMapping("/mgr/feedback")
 @RestController
 @Transactional
@@ -30,12 +32,13 @@ public class FeedBackServer extends BaseServer {
         return LoggerFactory.getLogger(this.getClass());
     }
 
-    /**
+*
      * 反馈成功返回0
      * 反馈失败返回-1
      * @param feedBack
      * @return
-     */
+
+
     @RequestMapping(value = "/feedQuestion",method = {RequestMethod.POST})
     public String feedQuestion(@ModelAttribute User user, @ModelAttribute FeedBack feedBack){
         if (validateUser(user.getPhoneName(),user.getPassword())){
@@ -58,3 +61,4 @@ public class FeedBackServer extends BaseServer {
         }
     }
 }
+*/

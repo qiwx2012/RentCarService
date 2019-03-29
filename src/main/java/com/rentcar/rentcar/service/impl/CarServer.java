@@ -1,3 +1,4 @@
+/*
 package com.rentcar.rentcar.service.impl;
 
 import com.rentcar.rentcar.domain.CarRent;
@@ -15,9 +16,11 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * Created by Xing on 2015/11/28.
- */
+ *//*
+
 @RequestMapping("/mgr/car")
 @RestController
 @Transactional
@@ -70,13 +73,15 @@ public class CarServer extends BaseServer {
         return json;
     }
 
-    /**
+    */
+/**
      * 租车成功返回0
      * 租车失败返回-1
      * @param user
      * @param carRent
      * @return
-     */
+     *//*
+
     @RequestMapping(value = "/rentCar",method = {RequestMethod.POST})
     public String rentCar(@ModelAttribute User user, @ModelAttribute CarRent carRent) throws ParseException {
         if (validateUser(user.getPhoneName(),user.getPassword())){
@@ -158,3 +163,4 @@ public class CarServer extends BaseServer {
     }
 
 }
+*/

@@ -89,10 +89,7 @@ public class HomeController {
         return "fdfdf";
     }
 
-    @RequestMapping(value = "/login",method =RequestMethod.POST )
-    public String login(@RequestParam(value = "name", defaultValue = "") String name,@RequestParam(value = "pwd", defaultValue = "") String pwd) {
-       return (name+"-"+pwd);
-    }
+
 
     @RequestMapping(value = "/edit_shop", method = RequestMethod.GET)
     public String edit_shop(@RequestParam(value = "id", defaultValue = "") String id) {

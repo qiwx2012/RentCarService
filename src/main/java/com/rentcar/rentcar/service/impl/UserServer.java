@@ -1,3 +1,4 @@
+/*
 package com.rentcar.rentcar.service.impl;
 
 
@@ -16,9 +17,11 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
+*/
 /**
  * Created by Xing on 2015/11/28.
- */
+ *//*
+
 @RequestMapping("/user")
 @RestController
 @Transactional
@@ -30,12 +33,14 @@ public class UserServer extends BaseServer {
     }
 
 
-    /**
+    */
+/**
      * 返回值0代表注册成功
      * 返回值-1代表注册失败
      *
      * @return
-     */
+     *//*
+
     @RequestMapping(value = "/register", method = {RequestMethod.GET})
     public String register() {
         User user=new User();
@@ -59,13 +64,15 @@ public class UserServer extends BaseServer {
         return "0";
     }
 
-    /**
+    */
+/**
      * 返回0登录成功
      * 返回-1登录失败
      *
      * @param user
      * @return
-     */
+     *//*
+
     @RequestMapping(value = "/login", method = {RequestMethod.POST})
     public String login(@ModelAttribute User user){
         String phoneName = user.getPhoneName();
@@ -82,10 +89,12 @@ public class UserServer extends BaseServer {
         }
     }
 
-    /**
+    */
+/**
      * 返回用户信息
      * @param user
-     */
+     *//*
+
     @RequestMapping(value = "/getUserMessage", method = {RequestMethod.POST})
     public JsonResponse getUserMessage(@ModelAttribute User user){
         JsonResponse json = new JsonResponse(false);
@@ -133,3 +142,4 @@ public class UserServer extends BaseServer {
     }
 
 }
+*/

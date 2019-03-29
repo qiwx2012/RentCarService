@@ -1,3 +1,4 @@
+/*
 package com.rentcar.rentcar.service.impl;
 
 
@@ -15,9 +16,11 @@ import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
+*/
 /**
  * Created by Xing on 2015/11/29.
- */
+ *//*
+
 @RequestMapping("/mgr/shop")
 @RestController
 @Transactional
@@ -58,3 +61,4 @@ public class ShopServer extends BaseServer {
         return json;
     }
 }
+*/
